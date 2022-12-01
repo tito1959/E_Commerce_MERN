@@ -1,0 +1,27 @@
+{
+  "username": "Marcus123",
+  "password": "sha256",
+  "admin": true,
+  "userData": {
+    "name": "Marcus",
+    "surname": "Tester",
+    "email": "marcus@mail.co",
+    "adress": "crr 12 A # 22-11",
+    "balance": 2500,
+    "orderList": [
+      {
+        "products": [
+          {
+            "name": "manzana",
+            "quantity": 2
+          },
+          {
+            "name": "celular",
+            "quantity": 3
+          }
+        ],
+        "total": 750
+      }
+    ]
+  }
+}

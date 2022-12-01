@@ -1,0 +1,32 @@
+GET http://localhost:3001/api/products
+
+###
+
+POST http://localhost:3001/api/products
+Content-Type: application/json
+
+{
+  "name": "Tester3'",
+  "stock": 15,
+  "price": 750,
+  "description": "this is a custom description",
+  "category": {
+     "_id": "638581d0c8abe7759c5d6b3e"
+  }
+}
+
+###
+
+PUT http://localhost:3001/api/products/6386304fefdec74598caa93b
+Content-Type: application/json
+
+{
+  "name": "Iphone 12 Pro"
+  # "category": {
+  #     "_id": "638581d0c8abe7759c5d6b3e"
+  #   }
+}
+
+###
+
+DELETE http://localhost:3001/api/products/6386361e427aa35729683de2

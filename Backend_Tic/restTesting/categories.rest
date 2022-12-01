@@ -1,0 +1,23 @@
+GET http://localhost:3001/api/categories
+
+###
+
+POST http://localhost:3001/api/categories
+Content-Type: application/json
+
+{
+  "name": "Frutas"
+}
+
+###
+
+PUT http://localhost:3001/api/categories/6385789eccc770eb0e995611
+Content-Type: application/json
+
+{
+  "name": "Frutirijillas"
+}
+
+###
+
+DELETE http://localhost:3001/api/categories/63858197474d7aa606cd6e05
