@@ -1,43 +1,45 @@
 {
   "name": "backend_tic",
   "version": "1.0.0",
-  "description": "api rest scalable for commerce basics",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "ts-standard",
-    "dev": "nodemon ./src/app.ts",
-    "tsc": "tsc --init",
+    "dev": "tsnd --respawn ./src/index.ts",
+    "tsc": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "@types/bcrypt": "^5.0.0",
-    "@types/cors": "^2.8.12",
-    "@types/dotenv": "^8.2.0",
-    "@types/express": "^4.17.14",
-    "@types/jsonwebtoken": "^8.5.9",
-    "@types/mongoose": "^5.11.97",
-    "nodemon": "^2.0.20",
-    "ts-node": "^10.9.1",
-    "ts-standard": "^12.0.1",
-    "typescript": "^4.9.3"
-  },
   "dependencies": {
     "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.1",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "helmet": "^6.0.1",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.7.3"
+    "mongoose": "^6.7.5",
+    "multer": "^1.4.5-lts.1"
   },
-  "eslintConfig": {
-    "parserOptions": {
-      "project": "./tsconfig.json"
-    },
-    "extends": [
-      "./node_modules/ts-standard/eslintrc.json"
-    ]
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/body-parser": "^1.19.2",
+    "@types/cors": "^2.8.12",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.14",
+    "@types/helmet": "^4.0.0",
+    "@types/jsonwebtoken": "^8.5.9",
+    "@types/mongoose": "^5.11.97",
+    "@types/multer": "^1.4.7",
+    "@typescript-eslint/eslint-plugin": "^5.45.1",
+    "@typescript-eslint/parser": "^5.45.0",
+    "eslint": "^8.29.0",
+    "eslint-config-standard-with-typescript": "^23.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.6.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.9.3"
   }
 }
