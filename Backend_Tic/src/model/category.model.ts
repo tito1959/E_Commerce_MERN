@@ -3,7 +3,7 @@ import { Category } from '../types/category.types'
 
 const categorySchema = new Schema<Category>({
   name: { type: String, required: true, min: 5, max: 20 },
-  products: []
+  products: [{ type: Schema.Types.ObjectId, ref: 'Product', unique: true }]
 },
 {
   versionKey: false,

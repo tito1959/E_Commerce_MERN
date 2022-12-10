@@ -7,6 +7,7 @@ import path from 'path'
 import './config/connection'
 import { authRouter } from './router/auth.router'
 import { categoryRouter } from './router/category.router'
+import { routerProduct } from './router/product.router'
 import { routerUser } from './router/user.router'
 
 /* Configs */
@@ -25,6 +26,7 @@ console.log(__dirname)
 app.use('/auth', authRouter)
 app.use('/api/users', routerUser)
 app.use('/api/category', categoryRouter)
+app.use('/api/products', routerProduct)
 
 /* server runner */
 const PORT = process.env.PORT as string
