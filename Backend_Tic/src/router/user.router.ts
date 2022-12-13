@@ -1,18 +1,16 @@
 import { Router } from 'express'
-import { getUsers } from '../controller/user.controller'
-import { verifyTokenAdmin } from '../middleware/auth.middleware'
+import { allUsers, deleteUser, uniqueUser, updateUser } from '../Controller/user.controller'
 
-export const routerUser = Router()
+export const userRouter = Router()
 
-/**
- * Un usuario autenticado puede actualizar sus datos, pero no puede:
- * ( borrar las ordenes de compra ni editarlas o eliminarlas )
- * Un administrador autenticado puede obtener todas los usuarios registrados, y gestionarlos
- */
+/* get all users only admin */
+userRouter.get('/', allUsers)
 
-/* obetener todos los usuarios */
-routerUser.get('/', verifyTokenAdmin, getUsers)
-/* actualizar su perfil, menos las ordenes de compra */
-routerUser.put('/')
-/* borrar su perfil */
-routerUser.delete('/')
+/* get one user, only admin */
+userRouter.get('/:id', uniqueUser)
+
+/* update user with id, only user owner and admin */
+userRouter.put('/:id', updateUser)
+
+/* delete user, only owner and admin */
+userRouter.delete('/:id', deleteUser)

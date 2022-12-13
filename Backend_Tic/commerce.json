@@ -1,0 +1,19 @@
+{
+  "userId": "11",
+  "orders": [
+    {
+      "id": "1",
+      "products": [
+        {
+          "productId": "999"
+        },
+        {
+          "quantity": 10
+        }
+      ]
+    }
+  ],
+  "amount": 700,
+  "address": "av 12 #51-22",
+  "status": "delivered"
+}

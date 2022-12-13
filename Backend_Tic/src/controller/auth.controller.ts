@@ -1,29 +1,27 @@
-import { Request, Response } from 'express'
-import { loginService, registerService } from '../service/auth.service'
-import { validUser } from '../utils/mapper/auth.mapper'
+import { Request, RequestHandler, Response } from 'express'
+import { loginService, registerService } from '../Services/auth.service'
+import { errorResponse } from '../utils/error/erroResponseHanlder'
+import { userMapped } from '../utils/mapper/auth.mapper'
 
-export const registerUser = (req: Request, res: Response): void => {
-  const mappedUser = validUser(req)
+export const login = (async ({ body }: Request, res: Response) => {
+  try {
+    const { username, password } = body
+    const data = await loginService(username, password);
 
-  registerService(mappedUser)
-    .then((data) => res.status(200).json(data))
-    .catch((err) => {
-      console.log(err)
-      if (err instanceof Error) res.status(400).json({ error: err.message, message: 'Error_register_user' })
-    })
-}
+    (Object.keys(data).includes('error'))
+      ? res.status(401).json(data)
+      : res.status(200).json(data)
+  } catch (err) {
+    errorResponse(err, 'Error login', res)
+  }
+}) as RequestHandler
 
-export const login = (req: Request, res: Response): void => {
-  const { username, password } = req.body
-
-  loginService(username, password)
-    .then((data) => {
-      (Object.keys(data).includes('error'))
-        ? res.status(400).json(data).end()
-        : res.status(200).json(data).end()
-    })
-    .catch((err) => {
-      console.log(err)
-      if (err instanceof Error) res.status(400).json({ err: err.message, message: 'Error_login_user' })
-    })
-}
+export const register = (async ({ body }: Request, res: Response) => {
+  try {
+    const dataMapped = userMapped(body)
+    const response = await registerService(dataMapped)
+    res.status(201).send(response)
+  } catch (err) {
+    errorResponse(err, 'Error register', res)
+  }
+}) as RequestHandler

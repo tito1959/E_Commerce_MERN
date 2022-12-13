@@ -1,14 +1,8 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose'
 
-const url_mongo = process.env.MONGO_URL as string;
-
+const URL_MONGO = process.env.URL_MONGO as string
 
 // connection, connect devuelve una promesa.
-mongoose.connect(url_mongo)
-  .then(() => console.log("Database Connected"))
-  .catch(err => console.error(err));
-
-process.on("uncaughtException", error => {
-  console.log(error);
-  mongoose.disconnect();
-});
+mongoose.connect(URL_MONGO)
+  .then(() => console.log('Database Connected'))
+  .catch(err => console.error(err))

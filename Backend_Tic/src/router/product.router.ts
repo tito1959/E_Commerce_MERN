@@ -1,16 +1,11 @@
 import { Router } from 'express'
-import { allProducts, createProduct, oneProduct, updateProduct } from '../controller/product.controller'
+import { allProducts, createProduct, deleteProduct, oneProduct, updateProduct } from '../Controller/product.controller'
 
-export const routerProduct = Router()
-/**
- * The router must retrive all products list for the market
- * must retrive one product detail founded by id
- * update product
- * delete product
- */
+export const productRouter = Router()
 
-routerProduct.get('/', allProducts)
-routerProduct.get('/:id', oneProduct)
-routerProduct.post('/', createProduct)
-routerProduct.put('/:id', updateProduct)
-routerProduct.delete('/:id')
+productRouter.get('/', allProducts)
+productRouter.get('/:id', oneProduct)
+
+productRouter.post('/', createProduct)
+productRouter.put('/:id', updateProduct)
+productRouter.delete('/:id', deleteProduct)
