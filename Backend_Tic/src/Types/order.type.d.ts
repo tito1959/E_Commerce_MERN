@@ -8,8 +8,6 @@ export interface Order {
   products: [
     {
       productId: string
-    },
-    {
       quantity: string
     }
   ]

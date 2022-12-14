@@ -5,9 +5,7 @@ const cartSchema = new Schema<Cart>({
   userId: { type: String, required: true, min: 5 },
   products: [
     {
-      productId: { type: String, required: true, min: 5 }
-    },
-    {
+      productId: { type: Schema.Types.ObjectId, ref: 'Product', required: true, min: 5 },
       quantity: { type: Number, required: true, min: 1 }
     }
   ]

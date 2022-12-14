@@ -5,6 +5,7 @@ import { productMapper } from '../utils/mapper/product.mapper'
 
 export const allProducts = (async (_req: Request, res: Response) => {
   try {
+    console.log(_req.query)
     const data = await allProductsService()
     res.status(200).json(data)
   } catch (err) {

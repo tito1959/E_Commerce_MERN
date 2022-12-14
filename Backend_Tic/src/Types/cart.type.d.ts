@@ -4,8 +4,6 @@ export interface Cart {
   products: [
     {
       productId: string
-    },
-    {
       quantity: number
     }
   ]

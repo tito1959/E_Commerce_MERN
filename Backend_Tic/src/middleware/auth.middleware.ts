@@ -1,10 +1,10 @@
 import { NextFunction, Request, Response } from 'express'
 import jwt, { JwtPayload } from 'jsonwebtoken'
 
-export const verifyToken = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+export const verifyToken = (req: Request, res: Response, next: NextFunction): void => {
   try {
-    const verified = tokenValidator(req)
-    console.log(verified)
+    tokenValidator(req)
+    // console.log({ type: typeof verified, payload: verified })
     next()
   } catch (err: unknown) {
     if (err instanceof Error) res.status(400).json({ error: err.message })

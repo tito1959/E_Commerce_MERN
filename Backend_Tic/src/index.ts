@@ -6,6 +6,7 @@ import bodyParser from 'body-parser'
 import { authRouter } from './Router/auth.router'
 import { userRouter } from './Router/user.router'
 import { productRouter } from './Router/product.router'
+import { cartRouter } from './Router/cart.router'
 
 const app = express()
 app.use(express.json())
@@ -19,7 +20,7 @@ app.get('/', (_req, res) => { res.status(200).json('Hello world :D') })
 app.use('/auth', authRouter)
 app.use('/api/users', userRouter)
 app.use('/api/products', productRouter)
-// app.use('/api/cart')
+app.use('/api/cart', cartRouter)
 // app.use('/api/orders')
 
 /* === server === */
