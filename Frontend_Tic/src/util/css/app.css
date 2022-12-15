@@ -1,0 +1,12 @@
+*{
+  background-color: aliceblue;
+  margin: 0;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h1{
+  background-color: rgb(27, 26, 26);
+  padding: 100px;
+  text-align: center;
+  color: whitesmoke;
+}

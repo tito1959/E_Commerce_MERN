@@ -7,6 +7,7 @@ import { authRouter } from './Router/auth.router'
 import { userRouter } from './Router/user.router'
 import { productRouter } from './Router/product.router'
 import { cartRouter } from './Router/cart.router'
+import { orderRouter } from './Router/order.router'
 
 const app = express()
 app.use(express.json())
@@ -21,7 +22,7 @@ app.use('/auth', authRouter)
 app.use('/api/users', userRouter)
 app.use('/api/products', productRouter)
 app.use('/api/cart', cartRouter)
-// app.use('/api/orders')
+app.use('/api/orders', orderRouter)
 
 /* === server === */
 const PORT = process.env.PORT as string

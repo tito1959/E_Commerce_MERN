@@ -21,3 +21,4 @@ export interface MetadataUser extends User, mongoose.Document {
 
 export type userNotPass = Omit<User, 'password'>
 export type userNotId = Omit<User, '_id'>
+export type userNoSensitive = Omit<User, 'password', 'balance', 'phone', 'admin', 'email'>

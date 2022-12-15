@@ -1,11 +1,11 @@
 import { model, Schema } from 'mongoose'
-import { Order } from '../Types/order.type'
+import { MetadataOrder } from '../Types/order.type'
 
-const orderSchema = new Schema<Order>({
-  userId: { type: String, required: true },
+const orderSchema = new Schema<MetadataOrder>({
+  userId: { type: Schema.Types.ObjectId, ref: 'User', required: true },
   products: [
     {
-      productId: { type: String, required: true },
+      productId: { type: Schema.Types.ObjectId, ref: 'Product', required: true },
       quantity: { type: Number, required: true, default: 1, min: 1 }
     }
   ],
